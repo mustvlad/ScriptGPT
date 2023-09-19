@@ -20,8 +20,3 @@ int yywrap() { return 1; }
 "\n"        { /* ignore newlines */ }
 .           { printf("UNKNOWN: %s\n", yytext); }
 %%
-
-int main() {
-    yylex();
-    return 0;
-}

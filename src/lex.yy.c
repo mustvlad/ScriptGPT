@@ -1791,9 +1791,3 @@ void yyfree (void * ptr )
 
 #line 22 "lexer.l"
 
-
-int main() {
-    yylex();
-    return 0;
-}
-
