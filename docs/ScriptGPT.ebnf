@@ -1,0 +1,25 @@
+program     = { statement } ;
+
+statement   = assignment | function_declaration | if_statement | loop ;
+
+assignment  = identifier, "=", expression, ";" ;
+
+function_declaration = "define", "function", identifier, "(", [ identifier, { ",", identifier } ], ")", "{", { statement }, "}" ;
+
+if_statement = "if", "(", expression, ")", "{", { statement }, "}", [ "else", "{", { statement }, "}" ] ;
+
+loop        = "for", identifier, "from", expression, "to", expression, "{", { statement }, "}" ;
+
+expression  = term, { ("+" | "-"), term } ;
+
+term        = factor, { ("*" | "/"), factor } ;
+
+factor      = number | identifier | "(", expression, ")" ;
+
+identifier  = letter, { letter | digit } ;
+
+number      = digit, { digit } ;
+
+letter      = "A" | "B" | ... | "Z" | "a" | "b" | ... | "z" ;
+
+digit       = "0" | "1" | ... | "9" ;
